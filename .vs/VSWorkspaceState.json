@@ -1,4 +1,8 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\APIKlant"
+  ],
+  "SelectedNode": "\\APIKlant\\WeatherForecast.cs",
   "PreviewInSolutionExplorer": false
 }
