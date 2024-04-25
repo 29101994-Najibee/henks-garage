@@ -9,7 +9,7 @@
             </ul>
             <div class="text-end">
                 <button type="button" class="btn btn-outline-light me-2">Log in</button> 
-                <button type="button" class="btn btn-secondary">Aanmelden</button>
+                <button type="button" class="btn btn-primary">Aanmelden</button>
             </div>
         </div>
     </div>

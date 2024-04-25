@@ -18,12 +18,20 @@ a:hover, .nav-link:focus, .nav-link:hover {
     color: #00ADB5;
 }
 
-.btn-secondary {
+h1 {
+    font-weight: bold;
+}
+
+.btn-primary {
     background: var(--garage-blue-color);
+    border: var(--garage-blue-color);
 }
 
 header {
     background-color: var(--garage-bg-color);
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
 .logo {
@@ -38,4 +46,18 @@ header {
     align-items: center;
     justify-content: center;
     background: var(--garage-white-color);
+    background-image: url('../img/bg-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero-box .text{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2em;
+}
+
+.hero-box .text h1 {
+    text-shadow: 3px 3px black;
+    color: var(--garage-white-color);
 }
