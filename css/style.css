@@ -1,0 +1,41 @@
+:root {
+    --garage-bg-color: #222831;
+    --garage-gray-color: #393E46;
+    --garage-blue-color: #00ADB5;
+    --garage-white-color: #EEEEEE;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a, .nav-link {
+    color: white;
+}
+
+a:hover, .nav-link:focus, .nav-link:hover {
+    color: #00ADB5;
+}
+
+.btn-secondary {
+    background: var(--garage-blue-color);
+}
+
+header {
+    background-color: var(--garage-bg-color);
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    margin-right: 1em;
+}
+
+.hero-box {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--garage-white-color);
+}
