@@ -30,7 +30,9 @@
                 <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
                     <div class="col d-flex flex-column align-items-start gap-2">
                         <h2 class="fw-bold text-body-emphasis">Wij zijn gefasineerde mensen met een grote passie!</h2>
-                        <p class="text-body-secondary">Sinds 20 jaar zijn wij met ons team hard op weg om tot de beste te horen, in Nederland en daarbuiten. Als u op zoek bent naar goede service bent u op het juiste adres, hopelijk kunnen we wat betekenen voor elkaar.</p>
+                        <p class="text-body-secondary">Sinds 20 jaar zijn wij met ons team hard op weg om tot de beste
+                            te horen, in Nederland en daarbuiten. Als u op zoek bent naar goede service bent u op het
+                            juiste adres, hopelijk kunnen we wat betekenen voor elkaar.</p>
                     </div>
 
                     <div class="col">

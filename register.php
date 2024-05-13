@@ -1,7 +1,3 @@
-<?php
-    //$_SESSION['user'] = 2;
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +13,10 @@
 
 <body>
     <main>
-        <?php require_once ('includes/nav.php'); ?>
-
-        <?php if(isset($_SESSION['user'])) { ?>
         <section class="container">
                 <div class="row g-5 pt-5">
                     <div class="col-md-8 offset-md-2 col-lg-8">
-                        <h1 class="mb-3">Afspraak maken</h1>
+                        <h1 class="mb-3">Registeren</h1>
                         <form class="needs-validation" method="post">
                             <div class="row g-3">
                                 <div class="col-12">
@@ -42,33 +35,6 @@
                                         Please enter a valid email address for shipping updates.
                                     </div>
                                 </div>
-
-                                <div class="col-12">
-                                    <label for="state" class="form-label">Type aanvraag*</label>
-                                    <select class="form-select" id="state" required>
-                                        <option>Reparatie</option>
-                                        <option>Keuring aanvragen</option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid state.
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="date" class="form-label">Datum*</label>
-                                    <input type="date" class="form-control" id="date" required>
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email address for shipping updates.
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <label for="message" class="form-label">Opmerkingen</label>
-                                    <textarea id="message" class="form-control" name="message" rows="4" cols="50"></textarea>
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email address for shipping updates.
-                                    </div>
-                                </div>
                             </div>
 
                             <hr class="my-4">
@@ -78,9 +44,6 @@
                     </div>
                 </div>
         </section>
-        <?php } else {echo 'je moet een account hebben om een afspraak te kunnen maken.';}?>
-
-        <?php require_once ('includes/footer.php'); ?>
     </main>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
