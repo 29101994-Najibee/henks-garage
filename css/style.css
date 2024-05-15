@@ -61,3 +61,12 @@ header {
     text-shadow: 3px 3px black;
     color: var(--garage-white-color);
 }
+
+.card-body {
+    padding: 2em;
+}
+
+.card-body label{
+    text-align: start;
+    padding-bottom: 10px;
+}
