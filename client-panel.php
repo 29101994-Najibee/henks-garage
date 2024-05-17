@@ -1,11 +1,6 @@
 <?php
     require_once("includes/data.php");
     session_start();
-
-    $_SESSION['user_id'] = 1;
-    $_SESSION['user'] = 'jan.jansen@example.com';
-
-    callApi($_SESSION['user']);
 ?>
 
 <!DOCTYPE html>
@@ -40,22 +35,28 @@
         <section>
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                    <?php 
+                        $json = callApi('appointment');
+
+                        foreach ($json as $data) {
+                    ?>
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm">
                             <div class="card-header py-3">
-                                <h2 class="h4 my-0">Type afspraak</h2>
+                                <h2 class="h4 my-0"><?php echo $data['problem']; ?></h2>
                             </div>
                             <div class="card-body">
-                                <h3 class="h2 fw-normal">Datum: 16-5-2024</h3>
+                                <h3 class="h2 fw-normal">Datum: <?php echo $data['datum']; ?></h3>
                                 <div class="d-flex justify-content-center flex-column py-3">
                                     <label for="text-area">Opmerkingen</label>
-                                    <textarea name="" id="text-area" placeholder="Eventuele opmerkingen"></textarea>
+                                    <textarea name="" id="text-area" placeholder="Eventuele opmerkingen"><?php echo $data['notes']; ?></textarea>
                                 </div>
 
                                 <button type="button" class="w-100 btn btn-lg btn-primary">Factuur</button>
                             </div>
                         </div>
                     </div>
+                    <?php }?>
                 </div>
             </div>
         </section>
