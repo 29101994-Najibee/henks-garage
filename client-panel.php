@@ -1,3 +1,13 @@
+<?php
+    require_once("includes/data.php");
+    session_start();
+
+    $_SESSION['user_id'] = 1;
+    $_SESSION['user'] = 'jan.jansen@example.com';
+
+    callApi($_SESSION['user']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
