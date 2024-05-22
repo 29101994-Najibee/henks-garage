@@ -66,3 +66,30 @@ function callApi($type) {
         echo 'No response received from the API.';
     }
 }
+
+function formatDate($data) {
+    $date = new DateTime($data);
+    $formattedDate = $date->format('d-m-Y');
+    return $formattedDate;
+}
+
+function daysUntilAppointment($data) {
+    $currentDate = new DateTime();
+    $appointmentDate = new DateTime($data);
+
+    // Reset time to 00:00 to consider whole days
+    $currentDate->setTime(0, 0);
+    $appointmentDate->setTime(0, 0);
+
+    if ($currentDate >= $appointmentDate) {
+        return "Afgehandeld";
+    }
+
+    $interval = $currentDate->diff($appointmentDate);
+
+    // Handle singular and plural form
+    $days = $interval->days;
+    $dayText = $days === 1 ? 'dag' : 'dagen';
+
+    return 'Afspraak over ' . $days . ' ' . $dayText;
+}

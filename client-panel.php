@@ -46,11 +46,12 @@
                                 <h2 class="h4 my-0"><?php echo $data['problem']; ?></h2>
                             </div>
                             <div class="card-body">
-                                <h3 class="h2 fw-normal">Datum: <?php echo $data['datum']; ?></h3>
+                                <h3 class="h2 fw-normal">Datum: <?php echo formatDate($data['datum']); ?></h3>
                                 <div class="d-flex justify-content-center flex-column py-3">
                                     <label for="text-area">Opmerkingen</label>
                                     <textarea name="" id="text-area" placeholder="Eventuele opmerkingen"><?php echo $data['notes']; ?></textarea>
                                 </div>
+                                <span><?php echo daysUntilAppointment($data['datum']);?></span>
 
                                 <button type="button" class="w-100 btn btn-lg btn-primary">Factuur</button>
                             </div>
