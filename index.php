@@ -1,3 +1,7 @@
+<?php
+ini_set('display_errors', 1);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +17,7 @@
 
 <body>
     <main>
-        <?php require_once ('includes/nav.php'); ?>
+        <?php require_once ('nav.php'); ?>
 
         <div class="hero-box container-fluid">
             <div class="row">
@@ -47,10 +51,12 @@
             </div>
         </section>
 
-        <?php require_once ('includes/footer.php'); ?>
+        <?php require_once ('footer.php'); ?>
     </main>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/app.js"></>
-</body >
-</html >
+    <script src="js/app.js">
+    </script>
+</body>
+
+</html>
