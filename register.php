@@ -24,7 +24,7 @@ require_once 'includes/login_view.inc.php';
 <body>
   
     <main>
-    <?php require_once 'nav.php'; ?>
+    <?php require_once ('includes/nav.php'); ?>
         <section class="container">
             <div class="row g-5 pt-5">
                 <div class="col-md-8 offset-md-2 col-lg-8">
@@ -116,7 +116,8 @@ require_once 'includes/login_view.inc.php';
                 </div>
             </div>
         </section>
-        <?php require_once 'footer.php'; ?>
+     
+        <?php require_once ('includes/footer.php'); ?>
     </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>

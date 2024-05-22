@@ -17,7 +17,7 @@ ini_set('display_errors', 1);
 
 <body>
     <main>
-        <?php require_once ('nav.php'); ?>
+        <?php require_once ('includes/nav.php'); ?>
 
         <div class="hero-box container-fluid">
             <div class="row">
@@ -51,7 +51,7 @@ ini_set('display_errors', 1);
             </div>
         </section>
 
-        <?php require_once ('footer.php'); ?>
+        <?php require_once ('includes/footer.php'); ?>
     </main>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

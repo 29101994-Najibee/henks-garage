@@ -22,7 +22,7 @@ require_once 'includes/login_view.inc.php';
 
 <body>
     <main>
-        <?php require_once 'nav.php'; ?>
+    <?php require_once ('includes/nav.php'); ?>
 
         <?php
 //if(isset($_SESSION['user_id'])) {
@@ -91,7 +91,8 @@ require_once 'includes/login_view.inc.php';
  //} else {echo 'je moet een account hebben om een afspraak te kunnen maken.';}
 ?>
 
-        <?php require_once 'footer.php'; ?>
+     
+ <?php require_once ('includes/footer.php'); ?>
     </main>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
