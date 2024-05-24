@@ -21,6 +21,9 @@ function callApi($type) {
         case "appointment":
             $api_url .= 'Appointment/AppointmentsByCustomerId?customerId=' . $user_id;
         break;
+        case "receptionist":
+            //$api_url .= 'Appointment/AppointmentsByCustomerId?customerId=' . $user_id;
+        break;
         default:
         break;
     }
