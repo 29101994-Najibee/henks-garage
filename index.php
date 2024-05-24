@@ -1,7 +1,3 @@
-<?php
-ini_set('display_errors', 1);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,8 +51,6 @@ ini_set('display_errors', 1);
     </main>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/app.js">
-    </script>
-</body>
-
-</html>
+    <script src="js/app.js"></script>
+</body >
+</html >
