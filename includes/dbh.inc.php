@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'GarageSysteem';
+$dbname = 'garagesysteem';
 $dbusername = 'root';
 $dbpassword = 'root';
 try {

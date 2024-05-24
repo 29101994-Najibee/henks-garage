@@ -23,7 +23,7 @@
 //if(isset($_SESSION['user_id'])) {
 ?>
 <?php require_once ('includes/nav.php'); ?>
-        <?php if(isset($_SESSION['user'])) { ?>
+      <?php //if(isset($_SESSION['user_id'])) { ?> 
         <section class="container">
                 <div class="row g-5 pt-5">
                     <div class="col-md-8 offset-md-2 col-lg-8">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
         </section>
-        <?php } else {echo 'je moet een account hebben om een afspraak te kunnen maken.';}?>
+        <?php //} else {echo 'je moet een account hebben om een afspraak te kunnen maken.';}?>
 
 
      

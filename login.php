@@ -23,48 +23,49 @@ require_once 'includes/login_view.inc.php';
 <body>
     <main>
     <?php require_once ('includes/nav.php'); ?>
-        <section class="container">
-            <div class="row g-5 pt-5">
-                <div class="col-md-8 offset-md-2 col-lg-8">
-                    <div class="container align-items-center" style="margin-top: 15rem;">
-                        <?php check_login_errors(); ?>
-                        <h2 class="tittle">Login Form</h2>
-                        <?php if (!isset($_SESSION['user_id'])) { ?>
-                            <form action="includes/login.inc.php" method="post">
-                                <div class="form-row">
-                                    <div class="col">
-                                        <label>Email</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="email"><i class="fa-regular fa-envelope"></i></span>
-                                            </div>
-                                            <input type="email" class="form-control" name="Mail" id="Mail" placeholder="Email">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col">
-                                        <label>Password</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="password"><i class="fa-solid fa-lock"></i></span>
-                                            </div>
-                                            <input type="password" class="form-control" name="Password" id="Password" placeholder="Password">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row" style="margin-top:15px">
-                                    <div class="col-sm-10">
-                                        <button class="btn btn-primary" type="submit">Verzenden</button>
-                                    </div>
-                                </div>
-                                <footer>Heb geen account? <a class="text-dark" href="register.php">Register nu</a></footer>
-                            </form>
-                        <?php } ?>
+                             
+        <div class="container mt-3">
+        <form action="includes/login.inc.php" method="post">
+            <?php check_login_errors(); ?>
+                <div class="row jumbotron box8">
+                    <div class="col-sm-12 mx-t3 mb-4">
+                        <h2 class="text-center text-info">Login</h2>
                     </div>
-                </div>
+                    
+                    <div class="col-sm-6 form-group">
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="email"><i class="fa-regular fa-envelope"></i></span>
+                            </div>
+                            <input type="email" class="form-control" name="Mail" id="Mail" placeholder="Email">
+                        </div>
+                    </div>
+                   
+                   
+
+                    <div class="col-sm-6 form-group">
+                        <label for="pass">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="email"><i class="fa-solid fa-lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" name="Password" id="Password" placeholder="Password">
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="col-sm-12">
+                        <p>Heb je geen account ! <a href="register.php">Registreren</a></p>
+                       
+                    </div>
+                    <div class="col-sm-12 form-group mb-0">
+                        <button class="btn btn-primary float-right">Submit</button>
+                    </div>
             </div>
-        </section>
+        </form>
+        </div>
+               
         <?php require_once ('includes/footer.php'); ?>
     </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
