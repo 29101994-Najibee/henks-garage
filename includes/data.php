@@ -30,7 +30,6 @@ function callApi($type) {
 
     // Initialize cURL
     $ch = curl_init();
-
     // Set cURL options
     curl_setopt($ch, CURLOPT_URL, $api_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

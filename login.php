@@ -65,7 +65,6 @@ require_once 'includes/login_view.inc.php';
                 </div>
             </div>
         </section>
-        
         <?php require_once ('includes/footer.php'); ?>
     </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

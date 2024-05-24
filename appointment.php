@@ -1,5 +1,5 @@
 <?php
-    //$_SESSION['user'] = 2;
+//$_SESSION['user'] = 2;
 ?>
 
 <!DOCTYPE html>
@@ -17,16 +17,12 @@
 
 <body>
     <main>
-
     <?php require_once ('includes/nav.php'); ?>
 
         <?php
 //if(isset($_SESSION['user_id'])) {
 ?>
-
-        <?php require_once ('includes/nav.php'); ?>
-
-
+<?php require_once ('includes/nav.php'); ?>
         <?php if(isset($_SESSION['user'])) { ?>
         <section class="container">
                 <div class="row g-5 pt-5">

@@ -13,9 +13,7 @@
 
 <body>
     <main>
-
     <?php require_once ('includes/nav.php'); ?>
-
         <section class="container">
                 <div class="row g-5 pt-5">
                     <div class="col-md-8 offset-md-2 col-lg-8">
