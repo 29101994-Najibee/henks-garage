@@ -12,8 +12,8 @@ ini_set('display_errors', 1);
                 <li><a href="appointment.php" class="nav-link px-2">Afspraak maken</a></li>
             </ul>
             <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2">Log in</button> 
-                <button type="button" class="btn btn-primary">Aanmelden</button>
+                <a href="login.php" class="btn btn-outline-light me-2">Log in</a> 
+                <a href="register.php" class="btn btn-primary">Aanmelden</a>
             </div>
         </div>
     </div>

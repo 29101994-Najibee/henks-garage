@@ -109,7 +109,7 @@ require_once 'includes/login_view.inc.php';
                                 </div>
                             </div>
 
-                            <footer>Heb je all account? <a class="text-dark" href="login.php">Inloggen</a></footer>
+                            <footer>Heb je al een account? <a class="text-dark" href="login.php">Inloggen</a></footer>
 
                         </form>
                     </div>
