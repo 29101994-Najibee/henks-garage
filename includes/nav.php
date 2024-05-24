@@ -6,7 +6,6 @@
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="appointment.php" class="nav-link px-2">Afspraak maken</a></li>
-                <li><a href="client-panel.php" class="nav-link px-2">Klantenpaneel</a></li>
             </ul>
             <div class="text-end">
                 <a href="login.php" class="btn btn-outline-light me-2">Log in</a> 

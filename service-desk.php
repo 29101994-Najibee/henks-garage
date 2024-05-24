@@ -51,9 +51,6 @@
                                     <label for="text-area">Opmerkingen</label>
                                     <textarea name="" id="text-area" placeholder="Eventuele opmerkingen"><?php echo $data['notes']; ?></textarea>
                                 </div>
-                                <span><?php echo daysUntilAppointment($data['datum']);?></span>
-
-                                <button type="button" class="w-100 btn btn-lg btn-primary">Factuur</button>
                             </div>
                         </div>
                     </div>
