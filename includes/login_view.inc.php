@@ -7,10 +7,11 @@ function output_username()
         echo 'Login is not successed!';
     }
 }
-
 function check_login_errors()
 {
+
     if (isset($_SESSION['errors_login'])) {
+        
         $errors = $_SESSION['errors_login'];
         echo '<br>';
         foreach ($errors as $error) {

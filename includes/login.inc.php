@@ -30,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: ../login.php');
             exit(); // Gebruik exit() in plaats van die() na header() redirect
         }
-
         $newSessionId = session_create_id();
         $sessionId = $newSessionId . '_' . $result['id'];
         session_id($sessionId);
@@ -43,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (PDOException $e) {
         die('Query failed: ' . $e->getMessage());
     }
+    
 } else {
     // Geen POST-gegevens ontvangen, misschien omleiden naar een andere pagina
     header('Location: ../index.php');

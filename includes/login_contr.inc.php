@@ -7,6 +7,7 @@ function is_input_empty(string $Mail, string $Password){
         return false;
     }
 }
+
 function is_Mail_wrong( bool|array $result){
     if(!$result){
         return true;
@@ -14,6 +15,7 @@ function is_Mail_wrong( bool|array $result){
         return false;
     }
 }
+
 function is_password_wrong( string $Password ,string $hashPwd ){
     if(!password_verify($Password,$hashPwd )){
         return true;

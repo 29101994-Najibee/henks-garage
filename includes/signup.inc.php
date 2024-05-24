@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once 'signup_contr.inc.php';
 
         $errors = [];
+        
         if (is_input_empty($Firstname, $Lastname, $Mail, $PhoneNumber, $Streetname, $HouseNumber, $Zipcode, $Password)) {
             $errors['empty_input'] = 'Fill in all fields!';
         }

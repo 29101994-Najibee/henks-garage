@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
 
 function get_email(object $pdo, string $Mail)
+
 {
     $query = 'SELECT Mail FROM customer WHERE Mail = :Mail;';
     $stmt = $pdo->prepare($query);
@@ -10,6 +11,7 @@ function get_email(object $pdo, string $Mail)
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
+
 function set_user(object $pdo, string $Firstname, string $Lastname, string $Mail, string $PhoneNumber, string $Streetname, string $HouseNumber, string $Zipcode, string $Password)
 {
     $query =
@@ -18,6 +20,7 @@ function set_user(object $pdo, string $Firstname, string $Lastname, string $Mail
     $options = [
         'cost' => 12,
     ];
+
     $hashPwd = password_hash($Password, PASSWORD_BCRYPT, $options);
     $stmt->bindParam(':Firstname', $Firstname);
     $stmt->bindParam(':Lastname', $Lastname);

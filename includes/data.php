@@ -1,5 +1,7 @@
 <?php
-// app
+
+
+
 // https://localhost:7180/api/Appointment/AppointmentsByCustomerId?customerId=5
 // https://localhost:7180/api/Customer/Login?mail=jan.jansen%40example.com&password=wachtwoord123
 
@@ -21,9 +23,11 @@ function callApi($type) {
         case "appointment":
             $api_url .= 'Appointment/AppointmentsByCustomerId?customerId=' . $user_id;
         break;
+
         case "receptionist":
             //$api_url .= 'Appointment/AppointmentsByCustomerId?customerId=' . $user_id;
         break;
+
         default:
         break;
     }

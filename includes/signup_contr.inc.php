@@ -9,6 +9,7 @@ function is_input_empty(string $Firstname, string $Lastname,string $Mail,string 
         return false;
     }
 }
+
 function is_Mail_invalid(string $Mail)
 {
     if (!filter_var($Mail, FILTER_VALIDATE_EMAIL)) {
@@ -17,6 +18,7 @@ function is_Mail_invalid(string $Mail)
         return false;
     }
 }
+
 function is_Mail_taken(object $pdo, string $Mail)
 {
     if (get_email($pdo, $Mail)) {
@@ -25,6 +27,7 @@ function is_Mail_taken(object $pdo, string $Mail)
         return false;
     }
 }
+
 function is_Mail_registred(object $pdo, string $Mail)
 {
     if (get_email($pdo, $Mail)) {
@@ -33,6 +36,7 @@ function is_Mail_registred(object $pdo, string $Mail)
         return false;
     }
 }
+
 function create_user(object $pdo, string $Firstname, string $Lastname,string $Mail,string $PhoneNumber, string $Streetname , string $HouseNumber , string $Zipcode ,string $Password)
 {
     set_user($pdo, $Firstname, $Lastname, $Mail, $PhoneNumber,  $Streetname ,  $HouseNumber ,  $Zipcode ,$Password);
