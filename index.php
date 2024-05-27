@@ -1,3 +1,8 @@
+<?php
+    //session_start();
+    //Print_r ($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

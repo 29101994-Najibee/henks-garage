@@ -5,11 +5,17 @@
                 <img src="img/logo.png" class="logo" alt="logo van garagebedrijf">
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="appointment.php" class="nav-link px-2">Afspraak maken</a></li>
+                <?php if(isset($_SESSION['user'])) { ?>
+                    <li><a href="appointment.php" class="nav-link px-2">Afspraak maken</a></li>
+                <?php }?>
             </ul>
             <div class="text-end">
-                <a href="login.php" class="btn btn-outline-light me-2">Log in</a> 
-                <a href="register.php" class="btn btn-primary">Aanmelden</a>
+                <?php if(isset($_SESSION['user'])) {
+                    echo '<a href="login.php" class="btn btn-outline-light me-2">Uitloggen</a> ';
+                } else {
+                    echo '<a href="login.php" class="btn btn-outline-light me-2">Log in</a> 
+                    <a href="register.php" class="btn btn-primary">Aanmelden</a>'; 
+                } ?>
             </div>
         </div>
     </div>
