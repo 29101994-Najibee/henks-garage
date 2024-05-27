@@ -6,10 +6,10 @@
 function callApi($type) {
     // $_SESSION['user_id'] = 1;
     // $_SESSION['user'] = 'jan.jansen@example.com';
-    // $_SESSION['password'] = 'wachtwoord123';
+     $_SESSION['password'] = 'wachtwoord123';
 
     $user_id = $_SESSION['user_id'];
-    $user = $_SESSION['user'];
+    $user = $_SESSION['user_Mail'];
     $password = $_SESSION['password'];
 
     $api_url = 'https://localhost:7180/api/';
@@ -24,6 +24,12 @@ function callApi($type) {
 
         case "receptionist":
             $api_url .= 'Appointment/AllAppointments';
+        break;
+        case "status_open":
+            $api_url .= 'Appointment/GetAppointmentByStatus?status=0';
+        break;
+        case "status_closed":
+            $api_url .= 'Appointment/GetAppointmentByStatus?status=3';
         break;
 
         default:

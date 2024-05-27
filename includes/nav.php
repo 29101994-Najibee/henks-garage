@@ -11,7 +11,7 @@
                 <?php }?>
             </ul>
             <div class="text-end">
-                <?php if(isset($_SESSION['user'])) {
+                <?php if(isset($_SESSION['user_Mail'])) {
                     echo '<a href="index.php?abort=1" class="btn btn-outline-light me-2">Uitloggen</a> ';
                 } else {
                     echo '<a href="login.php" class="btn btn-outline-light me-2">Log in</a> 

@@ -34,12 +34,38 @@
 
         <section>
             <div class="container">
+                <div class="row">
+                    <div class="col">                        
+                        <div class="dropdown mb-5">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Filteren
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="service-desk.php" class="text-black dropdown-item">Alle afspraken</a></li>
+                                <li><a href="service-desk.php?status=1" class="text-black dropdown-item">Open</a></li>
+                                <li><a href="service-desk.php?status=3" class="text-black dropdown-item">Gesloten</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                     <?php 
-                        $json = callApi('receptionist');
+                        if (isset($_GET['status'])) {
+                            if ($_GET['status'] == 1) {
+                                $json = callApi('status_open');
+                            } else if ($_GET['status'] == 3) {
+                                $json = callApi('status_closed');
+                            } else {
+                                $json = callApi('receptionist');
+                            }
+                        } else {
+                            $json = callApi('receptionist');
+                        }                        
 
                         foreach ($json as $data) {
                     ?>
+                   
                     <div class="col">
                         <div class="card mb-4 rounded-3 shadow-sm">
                             <div class="card-header py-3">
@@ -62,6 +88,7 @@
         <?php require_once ('includes/footer.php'); ?>
     </main>
 
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/app.js"></>
 </body >
