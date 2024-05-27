@@ -4,9 +4,9 @@
 // https://localhost:7180/api/Customer/Login?mail=jan.jansen%40example.com&password=wachtwoord123
 
 function callApi($type) {
-    $_SESSION['user_id'] = 1;
-    $_SESSION['user'] = 'jan.jansen@example.com';
-    $_SESSION['password'] = 'wachtwoord123';
+    // $_SESSION['user_id'] = 1;
+    // $_SESSION['user'] = 'jan.jansen@example.com';
+    // $_SESSION['password'] = 'wachtwoord123';
 
     $user_id = $_SESSION['user_id'];
     $user = $_SESSION['user'];

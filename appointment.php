@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+    session_start(); 
+    // print_r($_SESSION);
+    // echo '<br>' . $_SESSION['user_id'] . 'aaa';
+?>
 
 <!DOCTYPE html>
 <html lang="en">

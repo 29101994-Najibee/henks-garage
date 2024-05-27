@@ -1,6 +1,10 @@
 <?php
-    //session_start();
+    session_start();
     //Print_r ($_SESSION);
+
+    if($_GET['abort'] = 1) {
+        session_destroy();
+    }
 ?>
 
 <!DOCTYPE html>
