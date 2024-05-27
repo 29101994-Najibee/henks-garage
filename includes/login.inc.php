@@ -31,10 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit(); // Gebruik exit() in plaats van die() na header() redirect
         }
         $newSessionId = session_create_id();
-        $sessionId = $newSessionId . '_' . $result['id'];
+        $sessionId = $newSessionId . '_' . $result['idCustomer'];
         session_id($sessionId);
-        $_SESSION['user_id'] = $result['id'];
+        $_SESSION['idCustomer'] = $result['idCustomer'];
         $_SESSION['user_Mail'] = $result['Mail']; // Geen htmlspecialchars() hier
+        $_SESSION['Firstname'] = $result['Firstname'];
+        $_SESSION['Lastname'] = $result['Lastname'];
         $_SESSION['last_regeneration'] = time();
 
         header('Location: ../appointment.php');

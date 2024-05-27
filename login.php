@@ -41,9 +41,6 @@ require_once 'includes/login_view.inc.php';
                             <input type="email" class="form-control" name="Mail" id="Mail" placeholder="Email">
                         </div>
                     </div>
-                   
-                   
-
                     <div class="col-sm-6 form-group">
                         <label for="pass">Password</label>
                         <div class="input-group">
