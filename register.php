@@ -131,5 +131,4 @@ require_once 'includes/login_view.inc.php';
 
 </html>
 <?php
-unset($_SESSION['signup_data']);
-?>
+unset($_SESSION['signup_data']);?>
