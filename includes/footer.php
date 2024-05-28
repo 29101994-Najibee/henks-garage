@@ -22,7 +22,7 @@ require_once 'includes/login_view.inc.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<footer class="bg-body-tertiary text-center text-sm-start fixed-bottom" >
+<footer class="bg-body-tertiary text-center text-sm-start fixed-bottom" style="margin-top: 10rem;">
 
     <div class="container p-4">
         <section class="mb-4">

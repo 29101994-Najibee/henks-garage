@@ -30,7 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (validate_date($AppointmentDate)) {
             $errors['invalid_date'] = 'Invalid date used!';
         }
-
+        $reserved_dates = get_reserved_dates($pdo);
+        if (in_array($AppointmentDate, $reserved_dates)) {
+            $errors['reserved_date'] = 'This date is already reserved. Please choose another date.';
+        }
+    
         if ($errors) {
             $_SESSION['errors_appointment'] = $errors;
             $_SESSION['appointment_data'] = [
@@ -48,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 
-        add_appointment( $pdo, $AppointmentDate, $Status, $Problem, $Notes, $Mileage);
+        add_appointment( $pdo,$idCustomer, $AppointmentDate, $Status, $Problem, $Notes, $Mileage);
         header('Location: ../client-panel.php');
         exit();
 

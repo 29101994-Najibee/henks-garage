@@ -12,11 +12,12 @@ function get_appointment(object $pdo, string $idAppointment)
     return $result;
 }
 
-function add_appointment(object $pdo, string $AppointmentDate, string $Status, string $Notes, string $Problem, string $Mileage)
+function add_appointment(object $pdo,string $idCustomer, string $AppointmentDate, string $Status, string $Notes, string $Problem, string $Mileage)
 {
-    $query = 'INSERT INTO appointment (AppointmentDate, Status, Notes, Problem, Mileage) VALUES (:AppointmentDate, :Status, :Notes, :Problem, :Mileage);';
+    $query = 'INSERT INTO appointment ( idCustomer, AppointmentDate, Status, Notes, Problem, Mileage) VALUES (:idCustomer, :AppointmentDate, :Status, :Notes, :Problem, :Mileage);';
 $stmt = $pdo->prepare($query);
 
+$stmt->bindParam(':idCustomer', $idCustomer);
 $stmt->bindParam(':AppointmentDate', $AppointmentDate);
 $stmt->bindParam(':Status', $Status);
 $stmt->bindParam(':Notes', $Notes);
@@ -50,4 +51,10 @@ function check_Appointment_errors()
         echo '<br>';
         echo '<p class="form_success">appointment success!</p>';
     }
+}
+function get_reserved_dates(object $pdo= NULL) {
+    $query = 'SELECT AppointmentDate FROM appointment';
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_COLUMN);
 }

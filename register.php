@@ -31,7 +31,7 @@ require_once 'includes/login_view.inc.php';
 
         <?php require_once('includes/nav.php'); ?>
 
-        <div class="container mt-3">
+        <div class="container mt-3" style="margin-bottom: 10rem;">
             <form action="includes/signup.inc.php" method="post">
                 <?php check_signup_errors(); ?>
                 <div class="row jumbotron box8">
