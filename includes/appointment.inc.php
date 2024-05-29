@@ -4,12 +4,8 @@ declare(strict_types=1);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once '../includes/config_session.inc.php';
     $idCustomer = $_POST['idCustomer'];
-    // $AppointmentDate = $_POST['AppointmentDate'];
-    $Status = $_POST['Status'];
-    // $Notes = $_POST['Notes'];
-    // $Problem = $_POST['Problem'];
-    // $idEmployee = $_POST['idEmployee'];
-    // $Mileage = $_POST['Mileage'];
+    $Status = $_POST['Status'] ?? 'Waiting';
+   
   
     $AppointmentDate = isset($_POST['AppointmentDate']) ? $_POST['AppointmentDate'] : '';
     $Notes = isset($_POST['Notes']) ? $_POST['Notes'] : '';

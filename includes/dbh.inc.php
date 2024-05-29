@@ -2,7 +2,7 @@
 $host = 'localhost';
 $dbname = 'garagesysteem';
 $dbusername = 'root';
-$dbpassword = '';
+$dbpassword = 'root';
 try {
     
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);

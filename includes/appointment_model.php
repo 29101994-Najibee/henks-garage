@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-
+ require_once 'dbh.inc.php';
 function get_appointment(object $pdo, string $idAppointment)
 
 {
@@ -57,4 +57,10 @@ function get_reserved_dates(object $pdo= NULL) {
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_COLUMN);
+}
+function get_problem(object $pdo){
+    $query = "SELECT DISTINCT Problem FROM appointment";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

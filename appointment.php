@@ -3,13 +3,13 @@ error_reporting(E_ALL);
 require_once 'includes/config_session.inc.php';
 require_once 'includes/appointment_model.php';
 
-    print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Henk's Autogarage</title>
     <link rel="icon" type="image/x-icon" href="img/logo.png">
@@ -23,119 +23,115 @@ require_once 'includes/appointment_model.php';
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
+
 <body>
     <main>
         <?php require_once('includes/nav.php'); ?>
 
         <?php if (isset($_SESSION['idCustomer'])) { ?>
-            <div class="container mt-3"style="margin-bottom: 10rem;">
-            <form action="includes/appointment.inc.php" method="post">
-            <?php check_Appointment_errors(); ?>
-                <div class="row jumbotron box8">
-                    <div class="col-sm-12 mx-t3 mb-4">
-                        <h2 class="text-center text-info">Afspraak Maken</h2>
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <label for="firstname">First Name</label>
-                        
-                        <input type="text" class="form-control" id="firstName" placeholder="<?php echo ($_SESSION['Firstname'] ); ?>" >
-                                    <input type="hidden" name="idCustomer" value="<?php echo $_SESSION['idCustomer']; ?>">
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <label for="lastname">Last name</label>
-                        <input type="text" class="form-control" id="Lastname" placeholder="<?php echo ($_SESSION['Lastname'] ); ?>">
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <label for="email">Email</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="email"><i class="fa-regular fa-envelope"></i></span>
-                            </div>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com" value="<?php echo ($_SESSION['user_Mail']); ?>" >
+            <div class="container mt-3" style="margin-bottom: 10rem;">
+                <form action="includes/appointment.inc.php" method="post">
+                    <?php check_Appointment_errors(); ?>
+                    <div class="row jumbotron box8">
+                        <div class="col-sm-12 mx-t3 mb-4">
+                            <h2 class="text-center text-info">Afspraak Maken</h2>
                         </div>
-                    </div>
-                    <div class="col-sm-6 form-group">
-                    <label for="state" class="form-label">Type aanvraag</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa-solid fa-caret-down"></i></span>
-                            </div>
-                           
-                                    <select class="form-select" id="state" name="Status" required onchange="updateHiddenStatus()">
-                                        <option value="">Maak een keuze</option>
-                                        <option value="Waiting">Waiting</option>
-                                        <option value="Accepted">Accepted</option>
-                                        <option value="InProgress">InProgress</option>
-                                        <option value="Done">Done</option>
-                                        <option value="InvoiceSent">InvoiceSent</option>
-                                    </select>
+                        <div class="col-sm-6 form-group">
+                            <label for="firstname">First Name</label>
 
+                            <input type="text" class="form-control" id="firstName" placeholder="<?php echo ($_SESSION['Firstname']); ?>">
+                            <input type="hidden" name="idCustomer" value="<?php echo $_SESSION['idCustomer']; ?>">
                         </div>
-                    </div>
-                    <div class="col-sm-6 form-group">
-                    <label for="date" class="form-label">Datum</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa-regular fa-calendar-days"></i></span>
+                        <div class="col-sm-6 form-group">
+                            <label for="lastname">Last name</label>
+                            <input type="text" class="form-control" id="Lastname" placeholder="<?php echo ($_SESSION['Lastname']); ?>">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="email">Email</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="email"><i class="fa-regular fa-envelope"></i></span>
+                                </div>
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com" value="<?php echo ($_SESSION['user_Mail']); ?>">
                             </div>
-                                    <input type="date" class="form-control" id="date" name="AppointmentDate">
-                                    <div class="invalid-feedback">
-                                        Please enter appointment date.
-                                    </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6 form-group">
-                    <label for="kilometer" class="form-label">Kilometer Stand</label>
-                        <div class="input-group">
-                        <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa-solid fa-car"></i></span>
-                            </div>
-                            
-                                    <input type="text" class="form-control" id="Mileage" name="Mileage">
-                                    <div class="invalid-feedback">
-                                        Please enter kilometer.
-                                    </div>
-                        </div>
-                        </div>
-                   
-                    <div class="col-sm-12 form-group">
-                    <label for="problem" class="form-label">Probleem</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa-regular fa-message"></i></span>
-                            </div>
-                            
-                                    <textarea id="problem" class="form-control" name="Problem" rows="4" cols="50"></textarea>
-                                    <div class="invalid-feedback">
-                                    </div>
-                        </div>
-                        
-                    </div>
-                    <div class="col-sm-12 form-group">
-                    <label for="message" class="form-label">Opmerkingen</label>
-                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="Notes"><i class="fa-solid fa-message"></i></span>
-                            </div>
-                           
-                                    <textarea id="message" class="form-control" name="Notes" rows="4" cols="50"></textarea>
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email address for shipping updates.
-                                    </div>
-                    </div>
-                        </div>
-                        
+                        <input type="hidden" name="Status" value="Waiting">
+                        <div class="col-sm-6 form-group">
+                            <label for="Problem" class="form-label">Type aanvraag</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa-solid fa-caret-down"></i></span>
+                                </div>
 
-                    <div class="col-sm-12 form-group mb-0">
-                        <button class="btn btn-primary float-right">Submit</button>
-                    </div>
+                                <select class="form-select" id="state" name="Problem" required onchange="updateHiddenStatus()">
+                                    <option value="">Maak een keuze</option>
+                                    <?php
 
-                </div>
-            </form>
-        </div>
-            
+                                    try {
+
+                                        $problems = get_problem($pdo);
+
+
+                                        foreach ($problems as $problem) {
+                                            echo '<option value="' . htmlspecialchars($problem['Problem']) . '">' . htmlspecialchars($problem['Problem']) . '</option>';
+                                        }
+                                    } catch (PDOException $e) {
+                                        echo "Verbinding mislukt: " . $e->getMessage();
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="date" class="form-label">Datum</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa-regular fa-calendar-days"></i></span>
+                                </div>
+                                <input type="date" class="form-control" id="date" name="AppointmentDate">
+                                <div class="invalid-feedback">
+                                    Please enter appointment date.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="kilometer" class="form-label">Kilometer Stand</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa-solid fa-car"></i></span>
+                                </div>
+
+                                <input type="text" class="form-control" id="Mileage" name="Mileage">
+                                <div class="invalid-feedback">
+                                    Please enter kilometer.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label for="message" class="form-label">Opmerkingen</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="Notes"><i class="fa-solid fa-message"></i></span>
+                                </div>
+
+                                <textarea id="message" class="form-control" name="Notes" rows="4" cols="50"></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address for shipping updates.
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12 form-group mb-0">
+                            <button class="btn btn-primary float-right">Submit</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
         <?php } else {
-           echo '<div class="card"><p>je moet een account hebben om een afspraak te kunnen maken.</p></div>';
+            echo '<div class="card"><p>je moet een account hebben om een afspraak te kunnen maken.</p></div>';
         } ?>
 
         <?php require_once('includes/footer.php'); ?>
@@ -148,9 +144,9 @@ require_once 'includes/appointment_model.php';
         // JavaScript array met gereserveerde data
         const reservedDates = <?php echo json_encode($reserved_dates); ?>;
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const dateInput = document.getElementById('date');
-            dateInput.addEventListener('input', function () {
+            dateInput.addEventListener('input', function() {
                 const selectedDate = this.value;
                 if (reservedDates.includes(selectedDate)) {
                     alert('Deze datum is al gereserveerd. Kies een andere datum.');
@@ -160,4 +156,5 @@ require_once 'includes/appointment_model.php';
         });
     </script>
 </body>
+
 </html>
