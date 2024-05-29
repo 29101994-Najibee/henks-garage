@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    require_once 'includes/config_session.inc.php';
     //Print_r ($_SESSION);
 
     if($_GET['abort'] = 1) {
