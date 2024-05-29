@@ -1,6 +1,8 @@
 <?php
     require_once("includes/data.php");
     session_start();
+    print_r($_SESSION);
+    echo '<br>' . $_SESSION['user_id'] . 'aaa';
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +17,11 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <main>
         <?php require_once ('includes/nav.php'); ?>
+
         <section>
             <div class="container-fluid">
                 <div class="row">
@@ -29,6 +33,7 @@
                 </div>
             </div>
         </section>
+
         <section>
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">

@@ -1,24 +1,15 @@
 <?php
-// app
+
 // https://localhost:7180/api/Appointment/AppointmentsByCustomerId?customerId=5
 // https://localhost:7180/api/Customer/Login?mail=jan.jansen%40example.com&password=wachtwoord123
 
 function callApi($type) {
-
-    $_SESSION['user_id'] = 1;
-    $_SESSION['user'] = 'jan.jansen@example.com';
-    $_SESSION['password'] = 'wachtwoord123';
-
-    $user_id = $_SESSION['user_id'];
-    $user = $_SESSION['user'];
-
     // $_SESSION['user_id'] = 1;
     // $_SESSION['user'] = 'jan.jansen@example.com';
      $_SESSION['password'] = 'wachtwoord123';
 
     $user_id = $_SESSION['user_id'];
     $user = $_SESSION['user_Mail'];
-
     $password = $_SESSION['password'];
 
     $api_url = 'https://localhost:7180/api/';
@@ -29,10 +20,6 @@ function callApi($type) {
         break;
         case "appointment":
             $api_url .= 'Appointment/AppointmentsByCustomerId?customerId=' . $user_id;
-        break;
-
-        case "receptionist":
-            //$api_url .= 'Appointment/AppointmentsByCustomerId?customerId=' . $user_id;
         break;
 
         case "receptionist":
@@ -51,6 +38,7 @@ function callApi($type) {
 
     // Initialize cURL
     $ch = curl_init();
+
     // Set cURL options
     curl_setopt($ch, CURLOPT_URL, $api_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
