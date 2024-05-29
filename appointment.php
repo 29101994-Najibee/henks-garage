@@ -4,10 +4,6 @@ require_once 'includes/config_session.inc.php';
 require_once 'includes/appointment_model.php';
 
     print_r($_SESSION);
-
-    if (!isset($_SESSION['idCustomer'])) {
-        header('location:index.php');
-    }
 ?>
 
 <!DOCTYPE html>
