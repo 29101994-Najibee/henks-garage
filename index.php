@@ -5,7 +5,6 @@
     if($_GET['abort'] = 1) {
         session_destroy();
     }
-
 ?>
 
 <!DOCTYPE html>
