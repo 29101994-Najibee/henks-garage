@@ -134,7 +134,7 @@ require_once 'includes/appointment_model.php';
         </div>
             
         <?php } else {
-            echo 'je moet een account hebben om een afspraak te kunnen maken.';
+           echo '<div class="card"><p>je moet een account hebben om een afspraak te kunnen maken.</p></div>';
         } ?>
 
         <?php require_once('includes/footer.php'); ?>

@@ -1,7 +1,4 @@
 <?php
-
-//submit_rating.php
-
 require_once 'includes/dbh.inc.php';
 
 if(isset($_POST["rating_data"]))
