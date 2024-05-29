@@ -6,18 +6,18 @@
 function callApi($type) {
     // $_SESSION['user_id'] = 1;
     // $_SESSION['user'] = 'jan.jansen@example.com';
-     $_SESSION['password'] = 'wachtwoord123';
+     //$_SESSION['password'] = 'wachtwoord123';
 
-    $user_id = $_SESSION['user_id'];
-    $user = $_SESSION['user_Mail'];
-    $password = $_SESSION['password'];
+    $user_id = $_SESSION['idCustomer'];
+    //  $user = $_SESSION['user_Mail'];
+    //$password = $_SESSION['password'];
 
     $api_url = 'https://localhost:7180/api/';
 
     switch($type) {
-        case "login":
-            $api_url .= 'Customer/Login?mail=' . $user . '&password=' . $password;
-        break;
+        // case "login":
+        //     $api_url .= 'Customer/Login?mail=' . $user . '&password=' . $password;
+        // break;
         case "appointment":
             $api_url .= 'Appointment/AppointmentsByCustomerId?customerId=' . $user_id;
         break;
