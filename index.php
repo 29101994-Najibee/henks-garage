@@ -1,4 +1,5 @@
 <?php
+    require_once("includes/data.php");
     require_once 'includes/config_session.inc.php';
     //Print_r ($_SESSION);
 
