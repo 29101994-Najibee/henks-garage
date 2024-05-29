@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 require_once 'includes/config_session.inc.php';
 require_once 'includes/appointment_model.php';
 
-    print_r($_SESSION);
+    //print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
