@@ -17,6 +17,7 @@
                     echo '<a href="login.php" class="btn btn-outline-light me-2">Log in</a> 
                     <a href="register.php" class="btn btn-primary">Aanmelden</a>'; 
                 } ?>
+                <a href="loginEmployee.php" class="btn btn-secondary">Medewerker</a>
             </div>
         </div>
     </div>

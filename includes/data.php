@@ -4,14 +4,6 @@
 // https://localhost:7180/api/Customer/Login?mail=jan.jansen%40example.com&password=wachtwoord123
 
 function callApi($type) {
-    // $_SESSION['user_id'] = 1;
-    // $_SESSION['user'] = 'jan.jansen@example.com';
-     //$_SESSION['password'] = 'wachtwoord123';
-
-    $user_id = $_SESSION['idCustomer'];
-    //  $user = $_SESSION['user_Mail'];
-    //$password = $_SESSION['password'];
-
     $api_url = 'https://localhost:7180/api/';
 
     switch($type) {
@@ -19,7 +11,7 @@ function callApi($type) {
         //     $api_url .= 'Customer/Login?mail=' . $user . '&password=' . $password;
         // break;
         case "appointment":
-            $api_url .= 'Appointment/AppointmentsByCustomerId?customerId=' . $user_id;
+            $api_url .= 'Appointment/AppointmentsByCustomerId?customerId=' . $_SESSION['idCustomer'];
         break;
 
         case "receptionist":
@@ -30,6 +22,9 @@ function callApi($type) {
         break;
         case "status_closed":
             $api_url .= 'Appointment/GetAppointmentByStatus?status=3';
+        break;
+        case "receptionistLogin":
+            $api_url .= 'Employee/Login?fisrtName=' .  $_SESSION['loginEmployee'] . '&password=' . $_SESSION['loginEmployeePassword'] .'&role=0';
         break;
 
         default:
