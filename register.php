@@ -75,7 +75,7 @@ require_once 'includes/login_view.inc.php';
                         </div>
                     </div>
                     <div class="col-sm-4 form-group">
-                        <label for="huisnummer">Huisnumer</label>
+                        <label for="huisnummer">Huisnummer</label>
                         <div class="input-group">
                         <div class="input-group-prepend">
                                 <span class="input-group-text" id="straat"><i class="fa-solid fa-door-closed"></i></span>
@@ -84,7 +84,7 @@ require_once 'includes/login_view.inc.php';
                         </div>
                         </div>
                     <div class="col-sm-2 form-group">
-                        <label for="zip">Post-Code</label>
+                        <label for="zip">Postcode</label>
                         <input type="text" class="form-control" name="Zipcode" id="Zipcode" placeholder="Postcode">
                     </div>
 
