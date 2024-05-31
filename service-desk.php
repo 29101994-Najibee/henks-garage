@@ -1,7 +1,7 @@
 <?php
 require_once ("includes/data.php");
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 
 if (!isset($_SESSION['loginEmployee'])) {
     header('location:index.php');
@@ -49,11 +49,9 @@ if (!isset($_SESSION['loginEmployee'])) {
                             <ul class="dropdown-menu">
                                 <li><a href="service-desk.php" class="text-black dropdown-item">Alle afspraken</a></li>
                                 <li><a href="service-desk.php?status=1" class="text-black dropdown-item">Open</a></li>
-                                <li><a href="service-desk.php?status=3" class="text-black dropdown-item">Gesloten</a>
-                                </li>
+                                <li><a href="service-desk.php?status=3" class="text-black dropdown-item">Gesloten</a></li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
@@ -63,6 +61,10 @@ if (!isset($_SESSION['loginEmployee'])) {
                             $json = callApi('status_open');
                         } else if ($_GET['status'] == 3) {
                             $json = callApi('status_closed');
+                        } else if ($_GET['status'] == 4) {
+                            updateAppointment($_GET['Appointment']);
+
+                            $json = callApi('receptionist');
                         } else {
                             $json = callApi('receptionist');
                         }
@@ -75,7 +77,19 @@ if (!isset($_SESSION['loginEmployee'])) {
                         <div class="col">
                             <div class="card mb-4 rounded-3 shadow-sm">
                                 <div class="card-header py-3">
-                                    <h2 class="h4 my-0"><?php echo $data['problem']; ?></h2>
+                                    <div class="d-flex justify-content-center">
+                                        <h2 class="h4 my-0"><?php echo $data['problem']; ?> </h2>
+
+                                        <div class="dropdown mb-5">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <?php echo '<li><a href="service-desk.php?status=4&Appointment=' . $data['id'] . '" class="text-black dropdown-item">Done</a></li>'; ?>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-body">
                                     <h3 class="h2 fw-normal">Datum: <?php echo formatDate($data['datum']); ?></h3>

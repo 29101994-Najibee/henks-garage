@@ -1,5 +1,7 @@
 <?php
     require_once 'includes/config_session.inc.php';
+    require_once ("includes/data.php");
+
     //print_r($_SESSION);
     
     if (!isset($_SESSION['idCustomer'])) {
