@@ -88,7 +88,7 @@ function daysUntilAppointment($data) {
     $appointmentDate->setTime(0, 0);
 
     if ($currentDate >= $appointmentDate) {
-        return "Afgehandeld";
+        return "Afgelopen";
     }
 
     $interval = $currentDate->diff($appointmentDate);

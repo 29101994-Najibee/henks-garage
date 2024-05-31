@@ -1,7 +1,7 @@
 <?php
 require_once ("includes/data.php");
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 
 if (!isset($_SESSION['loginEmployee'])) {
     header('location:index.php');
