@@ -41,7 +41,7 @@ require_once 'includes/appointment_model.php';
                             <label for="firstname">First Name</label>
 
                             <input type="text" class="form-control" id="firstName" placeholder="<?php echo ($_SESSION['Firstname']); ?>">
-                            <input type="hidden" name="idCustomer" value="<?php echo $_SESSION['idCustomer']; ?>">
+                            <input type="hidden" name="idCutomer" value="<?php echo $_SESSION['idCustomer']; ?>">
                         </div>
                         <div class="col-sm-6 form-group">
                             <label for="lastname">Last name</label>
@@ -74,7 +74,7 @@ require_once 'includes/appointment_model.php';
 
 
                                         foreach ($problems as $problem) {
-                                            echo '<option value="' . htmlspecialchars($problem['Problem']) . '">' . htmlspecialchars($problem['Problem']) . '</option>';
+                                             echo '<option value="' . htmlspecialchars($problem['Problem']) . '">' . htmlspecialchars($problem['Problem']) . '</option>';
                                         }
                                     } catch (PDOException $e) {
                                         echo "Verbinding mislukt: " . $e->getMessage();

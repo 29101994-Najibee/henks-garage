@@ -12,20 +12,19 @@ function get_appointment(object $pdo, string $idAppointment)
     return $result;
 }
 
-function add_appointment(object $pdo,string $idCustomer, string $AppointmentDate, string $Status, string $Notes, string $Problem, string $Mileage)
+function add_appointment(object $pdo, string $idCutomer, string $AppointmentDate, string $Status, string $Notes, string $Problem, string $Mileage)
 {
-    $query = 'INSERT INTO appointment ( idCustomer, AppointmentDate, Status, Notes, Problem, Mileage) VALUES (:idCustomer, :AppointmentDate, :Status, :Notes, :Problem, :Mileage);';
-$stmt = $pdo->prepare($query);
+    $query = 'INSERT INTO appointment (idCutomer, AppointmentDate, Status, Notes, Problem, Mileage) VALUES (:idCutomer, :AppointmentDate, :Status, :Notes, :Problem, :Mileage);';
+    $stmt = $pdo->prepare($query);
 
-$stmt->bindParam(':idCustomer', $idCustomer);
-$stmt->bindParam(':AppointmentDate', $AppointmentDate);
-$stmt->bindParam(':Status', $Status);
-$stmt->bindParam(':Notes', $Notes);
-$stmt->bindParam(':Problem', $Problem);
-$stmt->bindParam(':Mileage', $Mileage);
+    $stmt->bindParam(':idCutomer', $idCutomer);
+    $stmt->bindParam(':AppointmentDate', $AppointmentDate);
+    $stmt->bindParam(':Status', $Status);
+    $stmt->bindParam(':Notes', $Notes);
+    $stmt->bindParam(':Problem', $Problem);
+    $stmt->bindParam(':Mileage', $Mileage);
 
-$stmt->execute();
-
+    $stmt->execute();
 }
 function validate_date(string $AppointmentDate): bool
 {
